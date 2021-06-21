@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { isPlainObject } from "is-plain-object";
 
-import Title from './Title';
+import Title from "./Title";
 
 class AddPhoto extends Component {
   constructor() {
@@ -19,11 +20,11 @@ class AddPhoto extends Component {
       post_img: img_link
     };
 
-    //console.log(this.props);
+    console.log("Is plain Object:", isPlainObject(post));
 
     if (img_link && img_desc) {
       this.props.startAddingPost(post);
-      this.props.onHistory.push('/');
+      this.props.onHistory.push("/");
     }
   }
 
