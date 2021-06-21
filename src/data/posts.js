@@ -1,4 +1,4 @@
-const posts = [
+/*const posts = [
   {
     post_id: 0,
     post_desc: 'Tanjiro from Deomn Slayer',
@@ -17,6 +17,7 @@ const posts = [
     post_img:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLZScCudNz4UCYUN8hrXdcNR3RNsm5Ci0LDg&usqp=CAU'
   }
-];
+];*/
+const posts = [];
 
 export default posts;

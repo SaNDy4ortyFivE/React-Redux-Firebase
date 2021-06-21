@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
-import './style.css';
+import React, { Component } from "react";
+import { Link, Route } from "react-router-dom";
+import "./style.css";
 
-import Title from './Title';
-import AddPhoto from './AddPhoto';
-import PhotoContainer from './PhotoContainer';
-import Single from './Single';
+import Title from "./Title";
+import AddPhoto from "./AddPhoto";
+import PhotoContainer from "./PhotoContainer";
+import Single from "./Single";
 //import { removePost } from './redux/actions';
 
 class App extends Component {
-  constructor() {
+  /*constructor() {
     super();
+  }*/
+
+  componentDidMount() {
+    this.props.startLoadingPost();
   }
 
   render() {
@@ -29,14 +33,14 @@ class App extends Component {
               </div>
               <div>
                 {this.props.posts
-                  .sort(function(x, y) {
+                  .sort(function (x, y) {
                     return y.post_id - x.post_id;
                   })
                   .map((post, key) => (
                     <PhotoContainer
                       posts={post}
                       key={key}
-                      onRemove={this.props.removePost}
+                      onRemove={this.props.startRemovingPost}
                     />
                   ))}
               </div>
@@ -57,7 +61,7 @@ class App extends Component {
         <Route
           exact
           path="/single/:id"
-          render={params => (
+          render={(params) => (
             <>
               <div>
                 <Single {...this.props} {...params} />
