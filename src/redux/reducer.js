@@ -1,10 +1,10 @@
-import posts from '../data/posts';
-import { combineReducers } from 'redux';
+import posts from "../data/posts";
+import { combineReducers } from "redux";
 
 function comments(state = {}, action) {
   switch (action.type) {
-    case 'ADD_COMMENT': {
-      console.log('post:', action.post_id, ' comment:', action.comment);
+    case "ADD_COMMENT": {
+      console.log("post:", action.post_id, " comment:", action.comment);
       if (!state[action.post_id]) {
         return { ...state, [action.post_id]: [action.comment] };
       } else {
@@ -21,14 +21,17 @@ function comments(state = {}, action) {
 
 function post(state = posts, action) {
   switch (action.type) {
-    case 'REMOVE_POST':
-      console.log('user removed post with ID:', action.index);
-      return state.filter(function(post) {
+    case "REMOVE_POST":
+      console.log("user removed post with ID:", action.index);
+      return state.filter(function (post) {
         return post.post_id !== action.index;
       });
-    case 'ADD_POST':
-      console.log('user added a new post:', action.post);
+    case "ADD_POST":
+      console.log("user added a new post:", action.post);
       return [...state, action.post];
+    case "LOAD_POSTS":
+      return action.posts;
+
     default:
       return state;
   }

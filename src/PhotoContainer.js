@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import ImageContainer from './ImageContainer';
-import ContentContainer from './ContentContainer';
+import ImageContainer from "./ImageContainer";
+import ContentContainer from "./ContentContainer";
 
 class PhotoContainer extends Component {
   render() {
-    //console.log(this.props);
     return (
       <div className="photo_container">
         <ImageContainer

@@ -19,7 +19,6 @@ var database = null;
 try {
   firebase.initializeApp(config);
   database = firebase.database();
-  console.log("Database in config:", database);
 } catch (err) {
   console.log(err);
 }

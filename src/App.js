@@ -9,8 +9,12 @@ import Single from "./Single";
 //import { removePost } from './redux/actions';
 
 class App extends Component {
-  constructor() {
+  /*constructor() {
     super();
+  }*/
+
+  componentDidMount() {
+    this.props.startLoadingPost();
   }
 
   render() {
@@ -36,7 +40,7 @@ class App extends Component {
                     <PhotoContainer
                       posts={post}
                       key={key}
-                      onRemove={this.props.removePost}
+                      onRemove={this.props.startRemovingPost}
                     />
                   ))}
               </div>
